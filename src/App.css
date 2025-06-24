@@ -1,0 +1,221 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #e0f7fa, #fce4ec);
+  transition: background 0.6s ease;
+}
+
+.dark-theme body {
+  background: linear-gradient(135deg, #c4c0c0, #2e2e2e);
+}
+
+.dark-theme .game-container {
+  background: #686767;
+  color: #f5f5f5;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
+}
+
+.dark-theme .title {
+  color: #fff;
+}
+
+.dark-theme .option-button {
+  background: #3b3b3b;
+  color: #f5f5f5;
+  border-color: #555;
+}
+
+
+.dark-theme .option-button:hover {
+  background: #505050;
+  border-color: #888;
+}
+
+.dark-theme .option-button.selected {
+  background: #e65d5d;
+  border-color: #fff;
+  color: #fff;
+    box-shadow: 0 6px 14px rgba(242, 150, 150, 0.3);
+}
+
+.dark-theme .result-text {
+  color: #eee;
+}
+
+.dark-theme .reset-button {
+  background-color: #1976d2;
+}
+
+.dark-theme .reset-button:hover {
+  background-color: #1565c0;
+}
+.game-wraper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  padding: 1rem;
+  box-sizing: border-box;
+  animation: fadeIn 0.8s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.97); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.game-container {
+  text-align: center;
+  padding: 3rem 1rem;
+  max-width: 1000px;
+  width: 100%;
+  height: 800px;
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+  transition: all 0.4s ease-in-out;
+}
+
+.game-container:hover {
+  transform: scale(1.01);
+}
+
+.title {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #333;
+  animation: dropIn 0.6s ease;
+}
+
+@keyframes dropIn {
+  from { transform: translateY(-20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.options {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.option-button {
+  padding: 1rem 1.5rem;
+  font-size: 1rem;
+  border: 2px solid #ccc;
+  background: #ffffff;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.option-button:hover {
+  background: #e3f2fd;
+  border-color: #64b5f6;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 16px rgba(100, 181, 246, 0.3);
+}
+
+.option-button.selected {
+  background: #c8e6c9;
+  border-color: #4caf50;
+  font-weight: bold;
+  transform: scale(1.05);
+  box-shadow: 0 6px 14px rgba(76, 175, 80, 0.3);
+}
+
+.results {
+  margin-top: 2rem;
+}
+
+.choice {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  font-size: 1.25rem;
+  margin: 0.5rem 0;
+}
+
+.emoji {
+  font-size: 3rem;
+  transition: transform 0.3s ease;
+}
+
+.emoji.animate {
+  animation: pop 0.5s ease-in-out;
+}
+
+@keyframes pop {
+  0% { transform: scale(1); }
+  40% { transform: scale(1.4); }
+  100% { transform: scale(1); }
+}
+
+.fade {
+  opacity: 0.4;
+  filter: grayscale(80%);
+}
+
+.result-text {
+  font-size: 2rem;
+  margin-top: 1rem;
+  font-weight: bold;
+  color: #222;
+  transition: color 0.3s ease;
+  animation: resultPop 0.4s ease-in;
+}
+
+@keyframes resultPop {
+  from { transform: scale(0.9); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.reset-button {
+  margin-top: 1.5rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  background-color: #4285f4;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 12px rgba(66, 133, 244, 0.4);
+}
+
+.reset-button:hover {
+  background-color: #3367d6;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(51, 103, 214, 0.5);
+}
+
+.top-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.lang-switch button,
+.sound-controls button {
+  background: transparent;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  margin: 0 0.25rem;
+}
+.sound-controls input[type="range"] {
+  vertical-align: middle;
+  margin: 0 0.5rem;
+}
+.theme-btn {
+  font-size: 1.2rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
