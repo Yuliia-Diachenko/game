@@ -35,6 +35,8 @@ const App = () => {
   const [playerChoice, setPlayerChoice] = useState('');
   const [computerChoice, setComputerChoice] = useState('');
   const [result, setResult] = useState('');
+  const [playerScore, setPlayerScore] = useState(0);
+const [computerScore, setComputerScore] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
   const [isDark, setIsDark] = useState(false);
   const [isMuted, setIsMuted] = useState(false);
@@ -108,18 +110,25 @@ const App = () => {
       setComputerChoice(randomChoice);
       const res = getResult(choice, randomChoice);
       setResult(res);
+      if (res === 'win') {
+      setPlayerScore(prev => prev + 1);
+      playSound(winAudio);
+    } else if (res === 'lose') {
+      setComputerScore(prev => prev + 1);
+      playSound(loseAudio);}
       if (res === 'win') playSound(winAudio);
       else if (res === 'lose') playSound(loseAudio);
       setIsAnimating(false);
     }, 700);
   };
 
-  const reset = () => {
-    setPlayerChoice('');
-    setComputerChoice('');
-    setResult('');
-  };
-
+const reset = () => {
+  setPlayerChoice('');
+  setComputerChoice('');
+  setResult('');
+  setPlayerScore(0);
+  setComputerScore(0);
+};
   const t = TEXT[lang];
 
   return (
@@ -143,14 +152,16 @@ const App = () => {
           isAnimating={isAnimating}
           onPlay={handlePlay}
         />
-        <Results
+      <Results
           playerChoice={playerChoice}
           computerChoice={computerChoice}
           result={result}
           reset={reset}
           emojis={EMOJIS}
           text={t}
-        />
+          playerScore={playerScore}
+          computerScore={computerScore}
+/>
       </div>
     </div>
   );

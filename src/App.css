@@ -178,10 +178,10 @@ body {
 }
 
 .result-text {
-  font-size: 2rem;
+  font-size: 1rem;
   margin-top: 1rem;
   font-weight: bold;
-  color: #222;
+  color: #d93a3a;
   transition: color 0.3s ease;
   animation: resultPop 0.4s ease-in;
 }
@@ -192,8 +192,8 @@ body {
 }
 
 .reset-button {
-  margin-top: 1.5rem;
-  padding: 0.75rem 1.5rem;
+  margin-top: 1rem;
+  padding: 0.45rem 1.5rem;
   font-size: 1rem;
   background-color: #4285f4;
   color: white;
@@ -234,4 +234,10 @@ body {
   background: transparent;
   border: none;
   cursor: pointer;
+}
+
+.score {
+  margin: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: bold;
 }

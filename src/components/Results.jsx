@@ -1,6 +1,7 @@
 import React from 'react';
 
-const Results = ({ playerChoice, computerChoice, result, reset, emojis, text }) => {
+const Results = ({ playerChoice, computerChoice, result, reset, emojis, text, playerScore, computerScore }) => {
+
   if (!playerChoice) return null;
 
   return (
@@ -16,6 +17,9 @@ const Results = ({ playerChoice, computerChoice, result, reset, emojis, text }) 
         </div>
       </div>
       <h2 className="result-text">{text[result]}</h2>
+      <h3 className="score">
+          {text.you} {playerScore} / {text.computer} {computerScore}
+      </h3>
       <button onClick={reset} className="reset-button">
         {text.playAgain}
       </button>
