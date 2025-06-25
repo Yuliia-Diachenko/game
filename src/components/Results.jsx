@@ -6,11 +6,11 @@ const Results = ({ playerChoice, computerChoice, result, reset, emojis, text }) 
   return (
     <div className="results">
       <div className="choice">
-        <span>{text.you}</span>
+        <span className='text-gamer'>{text.you}</span>
         <div className="emoji animate">{emojis[playerChoice]}</div>
       </div>
       <div className="choice">
-        <span>{text.computer}</span>
+        <span className='text-gamer'>{text.computer}</span>
         <div className={`emoji animate ${!computerChoice ? 'fade' : ''}`}>
           {computerChoice ? emojis[computerChoice] : '❓'}
         </div>

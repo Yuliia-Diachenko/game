@@ -2,14 +2,15 @@ import React from 'react';
 
 const Header = ({ setLang, isDark, setIsDark, isMuted, setIsMuted, volume, setVolume }) => {
   return (
-    <div className="top-controls">
+    <header className="top-controls">
       <div className="lang-switch">
         <button onClick={() => setLang('ua')} aria-label="Switch to Ukrainian">🇺🇦</button>
         <button onClick={() => setLang('en')} aria-label="Switch to English">🇬🇧</button>
       </div>
       <div className="sound-controls">
+        <span>🔊</span>
         <label>
-          🔊
+          
           <input
             type="range"
             min="0"
@@ -31,7 +32,7 @@ const Header = ({ setLang, isDark, setIsDark, isMuted, setIsMuted, volume, setVo
       >
         {isDark ? '🌙' : '🌞'}
       </button>
-    </div>
+    </header>
   );
 };
 
